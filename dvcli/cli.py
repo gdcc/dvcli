@@ -1,6 +1,9 @@
 import click
 
-@click.command()
+@click.group()
 def cli():
-    """Example script."""
-    click.echo('Hello World!')
+    """
+    Dataverse Command Line Interface.
+
+    Use and manage a Dataverse installation from your terminal.
+    """
