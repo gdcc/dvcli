@@ -9,6 +9,8 @@ For now, being an experiment without any releases, simply:
 - Create a virtualenv or use [asdf](https://asdf-vm.io) to create non-system python env
 - Run `pip install --editable .` from the cloned repo root to install
 - Run `dvcli`
+- When hacking on the files, you can simply run the tool again - the choosen
+  installation method enables magically using it without reinstall.
 
 ## Ideas
 
