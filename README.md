@@ -9,3 +9,9 @@ For now, being an experiment without any releases, simply:
 - Create a virtualenv or use [asdf](https://asdf-vm.io) to create non-system python env
 - Run `pip install --editable .` from the cloned repo root to install
 - Run `dvcli`
+
+## Ideas
+
+- Can be extended by others using https://github.com/click-contrib/click-plugins.
+  Adding support here is easy. That way we can split efforts but still have a
+  common ground.
