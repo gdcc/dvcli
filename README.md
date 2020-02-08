@@ -31,3 +31,5 @@ are merged, but not arrays or hash values (so no deep merge).
 - Can be extended by others using https://github.com/click-contrib/click-plugins.
   Adding support here is easy. That way we can split efforts but still have a
   common ground.
+- Create a command to set database configuration options in an idempotent manner.
+- Maybe add a XML generator for JVM options to ease their configuration?
