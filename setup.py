@@ -6,10 +6,11 @@ setup(
     py_modules=find_packages(),
     install_requires=[
         'Click==7.0',
-        'pyDataverse==0.2.1'
+        'pyDataverse==0.2.1',
+        'confuse==1.0.0'
     ],
     entry_points='''
         [console_scripts]
-        dvcli=dvcli.cli:cli
+        dvcli=dvcli.cli:main
     ''',
 )
