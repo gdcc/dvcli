@@ -8,7 +8,7 @@ See also community mailing list: https://groups.google.com/forum/#!topic/dataver
 For now, being an experiment without any releases, simply:
 
 - `git clone` this repository
-- Create a virtualenv or use [asdf](https://asdf-vm.io) to create non-system python env
+- Create a virtualenv or use [asdf](https://asdf-vm.com) to create non-system python env
 - Run `pip install --editable .` from the cloned repo root to install
 - Run `dvcli`
 - When hacking on the files, you can simply run the tool again - the choosen
