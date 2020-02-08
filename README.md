@@ -1,6 +1,8 @@
 # dvcli
 An experiment in creating an all-in-one CLI application for using and administrating Dataverse
 
+See also community mailing list: https://groups.google.com/forum/#!topic/dataverse-community/etN5URWos44
+
 ## Installation
 
 For now, being an experiment without any releases, simply:
