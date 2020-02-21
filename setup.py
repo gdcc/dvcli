@@ -6,6 +6,8 @@ setup(
     py_modules=find_packages(),
     install_requires=[
         'Click==7.0',
+        'click-plugins==1.1.1',
+        'click-log==0.3.2',
         'pyDataverse==0.2.1',
         'confuse==1.0.0'
     ],

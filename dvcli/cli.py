@@ -1,11 +1,14 @@
+from pkg_resources import iter_entry_points
+
 import click, confuse, sys, os
+from click_plugins import with_plugins
 
 configuration = confuse.LazyConfig('dvcli', __name__)
 
-@click.command()
+@with_plugins(iter_entry_points('dvcli.plugins'))
+@click.group()
 @click.option('--config', help='custom path to config. Loading '+configuration.user_config_path()+' by default.', type=click.Path())
-@click.option('--url', help='URL to Dataverse installation', metavar='URL')
-def cli(config, url):
+def cli(config):
     """
     Dataverse Command Line Interface.
 
@@ -22,7 +25,7 @@ def cli(config, url):
             sys.exit(10)
 
     # pass other args from cmdline to configuration
-    configuration.set_args({'url': url})
+    # example: configuration.set_args({'url': url})
 
 def main():
     """
