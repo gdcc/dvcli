@@ -6,13 +6,19 @@ An experiment in creating an all-in-one CLI application for using and administra
 
 See also community mailing list: https://groups.google.com/forum/#!topic/dataverse-community/etN5URWos44
 
-## installation
+## Installation
 
 For now, being an experiment without any releases, simply:
 
 ```
 pip install git+https://github.com/poikilotherm/dvcli.git
 ```
+
+## Plugins
+
+A list of available plugins, which extend `dvcli` in fields beyond core scope:
+
+- Kubernetes: https://github.com/poikilotherm/dvcli-plugin-k8s
 
 ## Development
 
