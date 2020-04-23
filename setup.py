@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='dvcli',
     version='0.0.1',
-    py_modules=find_packages(),
+    packages=find_packages(),
     install_requires=[
         'Click==7.0',
         'click-plugins==1.1.1',
