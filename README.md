@@ -6,9 +6,15 @@ An experiment in creating an all-in-one CLI application for using and administra
 
 See also community mailing list: https://groups.google.com/forum/#!topic/dataverse-community/etN5URWos44
 
-## Installation
+## installation
 
 For now, being an experiment without any releases, simply:
+
+```
+pip install git+https://github.com/poikilotherm/dvcli.git
+```
+
+## Development
 
 - `git clone` this repository
 - Create a virtualenv or use [asdf](https://asdf-vm.com) to create non-system python env
