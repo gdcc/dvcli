@@ -11,7 +11,7 @@ See also community mailing list: https://groups.google.com/forum/#!topic/dataver
 For now, being an experiment without any releases, simply:
 
 ```
-pip install git+https://github.com/poikilotherm/dvcli.git
+pip install git+https://github.com/GlobalDataverseCommunityConsortium/dvcli.git
 ```
 
 ## Plugins
