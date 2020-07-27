@@ -3,6 +3,9 @@ from pkg_resources import iter_entry_points
 import click, confuse, sys, os
 from click_plugins import with_plugins
 
+### Importing our base commands
+from .user import cli as user_commands
+
 configuration = confuse.LazyConfig('dvcli', __name__)
 
 @with_plugins(iter_entry_points('dvcli.plugins'))
@@ -33,6 +36,7 @@ def main():
     This function is called from the entrypoint script installed by setuptools.
     It enables using environment variables like DVCLI_CONFIG as options.
     """
+    user_commands.register(cli)
     cli(auto_envvar_prefix='DVCLI')
 
 # Allow running this file as standalone app without setuptools wrappers
