@@ -31,6 +31,19 @@ A list of available plugins, which extend `dvcli` in fields beyond core scope:
 - When hacking on the files, there is no need to re-run the install.
   (This becomes necessary when changing dependencies in `setup.py`.)
 
+## Single binary distribution
+
+While we can install `dvcli` via `pip`, for container usage or other use cases where no installation of
+Python is present (Windows, ...), it is possible to package this CLI tool into a single binary.
+
+To do so, please install PyOxidizer and build after cloning the project:
+- `pip install -r requirements-dev.txt`
+- `pyoxidizer build`
+
+In a automated future release process we might offer CI-built platform-specific binaries for download.
+Also targeting the different pitfalls at https://pyoxidizer.readthedocs.io/en/stable/pyoxidizer_distributing.html then.
+This would be a huge benefit for inclusion in container images.
+
 ## Configuration
 
 All parameters, options etc for any command can be given via:
