@@ -1,3 +1,3 @@
 """
-A dvcli plugin for basic Dataverse user tasks.
+Basic Dataverse users tasks made simple.
 """

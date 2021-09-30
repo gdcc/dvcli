@@ -13,6 +13,7 @@ specific language governing permissions and limitations under the License.
 
 import click
 
+
 @click.group()
 @click.pass_context
 def dataset(ctx):
@@ -26,5 +27,5 @@ def dataset(ctx):
 # @dataset.command()
 # def create():
 #     """
-#     Create a dataset in a dataverse
+#     Create a dataset in a dataverse collection
 #     """

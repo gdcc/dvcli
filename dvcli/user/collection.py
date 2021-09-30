@@ -13,17 +13,18 @@ specific language governing permissions and limitations under the License.
 
 import click
 
+
 @click.group()
 @click.pass_context
-def dataverse(ctx):
+def collection(ctx):
     """
-    Basic dataverse tasks.
+    Basic Dataverse collection tasks.
     """
     # ensure that ctx.obj exists and is a dict
     ctx.ensure_object(dict)
 
-# @dataverse.command(name="list-all")
+# @collection.command(name="list-all")
 # def list_all():
 #    """
-#    List all dataverse accessible tos you.
+#    List all dataverse accessible to you.
 #    """
