@@ -11,7 +11,7 @@ See also community mailing list: https://groups.google.com/forum/#!topic/dataver
 For now, being an experiment without any releases, simply:
 
 ```
-pip install git+https://github.com/GlobalDataverseCommunityConsortium/dvcli.git
+pip install git+https://github.com/gdcc/dvcli.git
 ```
 
 ## Plugins
@@ -22,12 +22,14 @@ A list of available plugins, which extend `dvcli` in fields beyond core scope:
 
 ## Development
 
+- (Optional) Install [`pre-commit`](https://pre-commit.com) if not already present on your system.
 - `git clone` this repository
-- Create a virtualenv or use [asdf](https://asdf-vm.com) to create non-system python env
+- (Optional) Install commit hooks for [`pre-commit`](https://pre-commit.com) via `pre-commit install`
+- Create and activate a virtualenv or use [asdf](https://asdf-vm.com) to create non-system python env
 - Run `pip install --editable .` from the cloned repo root to install
 - Run `dvcli`
-- When hacking on the files, you can simply run the tool again - the choosen
-  installation method enables magically using it without reinstall.
+- When hacking on the files, there is no need to re-run the install.
+  (This becomes necessary when changing dependencies in `setup.py`.)
 
 ## Configuration
 
