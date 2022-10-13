@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "dvcli"
+version = "0.1.0"
+description = "Simple script to upload a bunch of files and folders to a dtaset in Jülich DATA (Dataverse)."
+authors = ["Oliver Bertuch <o.bertuch@fz-juelich.de>", "Ana Trisovic <anatrisovic@g.harvard.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyDataverse = "^0.3.1"
+click = "^8.1"
+click-log = "^0.4.0"
+confuse = "^2.0.0"
+
+[tool.poetry.scripts]
+dvcli = "dvcli.cli:main"
+
+[tool.poetry.plugins."dvcli.plugins"]
+user = "dvcli.user.cli:register"
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"

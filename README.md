@@ -8,6 +8,8 @@ See also community mailing list: https://groups.google.com/forum/#!topic/dataver
 
 ## Installation
 
+This tool requires Python v3.8 or newer.
+
 For now, being an experiment without any releases, simply:
 
 ```
@@ -25,24 +27,10 @@ A list of available plugins, which extend `dvcli` in fields beyond core scope:
 - (Optional) Install [`pre-commit`](https://pre-commit.com) if not already present on your system.
 - `git clone` this repository
 - (Optional) Install commit hooks for [`pre-commit`](https://pre-commit.com) via `pre-commit install`
-- Create and activate a virtualenv or use [asdf](https://asdf-vm.com) to create non-system python env
-- Run `pip install --editable .` from the cloned repo root to install
-- Run `dvcli`
-- When hacking on the files, there is no need to re-run the install.
-  (This becomes necessary when changing dependencies in `setup.py`.)
-
-## Single binary distribution
-
-While we can install `dvcli` via `pip`, for container usage or other use cases where no installation of
-Python is present (Windows, ...), it is possible to package this CLI tool into a single binary.
-
-To do so, please install PyOxidizer and build after cloning the project:
-- `pip install -r requirements-dev.txt`
-- `pyoxidizer build`
-
-In a automated future release process we might offer CI-built platform-specific binaries for download.
-Also targeting the different pitfalls at https://pyoxidizer.readthedocs.io/en/stable/pyoxidizer_distributing.html then.
-This would be a huge benefit for inclusion in container images.
+- Install [`poetry`](https://python-poetry.org/docs/#installation) as your build system
+- Run `poetry install` (creates a virtual environment for you, too)
+- Run `poetry run dvcli`
+- When hacking on the files, there is no need to re-run the install, only when changing dependencies.
 
 ## Configuration
 
@@ -60,8 +48,7 @@ are merged, but not arrays or hash values (so no deep merge).
 
 ## Ideas
 
-- Can be extended by others using https://github.com/click-contrib/click-plugins.
-  Adding support here is easy. That way we can split efforts but still have a
-  common ground.
+- Can be extended by others using a standard python plugin mechanism via entry points.
+  More extensive documentation to come, you can take a look at this codebase as an example.
 - Create a command to set database configuration options in an idempotent manner.
 - Maybe add a XML generator for JVM options to ease their configuration?

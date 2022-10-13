@@ -1,15 +1,11 @@
-from pkg_resources import iter_entry_points
+import sys
+import os
+import logging
+from importlib import metadata
 
 import click
 import click_log
 import confuse
-import sys
-import os
-import logging
-from click_plugins import with_plugins
-
-# Importing commands from submodules
-import dvcli.user.cli as user_group
 
 # Global variables
 configuration = confuse.LazyConfig('dvcli', __name__)
@@ -20,7 +16,6 @@ click_log.basic_config(logger)
 verbosity = {0: logging.ERROR, 1: logging.WARN, 2: logging.INFO, 3: logging.DEBUG}
 
 
-@with_plugins(iter_entry_points('dvcli.plugins'))
 @click.group()
 @click.option('--config', '-c',
               help='Custom path to config. Trying ' + configuration.user_config_path() + ' by default.',
@@ -59,10 +54,18 @@ def cli(config, verbose, quiet):
 def main():
     """
     Start the cli interface.
-    This function is called from the entrypoint script installed by setuptools.
+    This function is called from the entrypoint script installed by poetry.
     It enables using environment variables like DVCLI_CONFIG as options.
     """
-    user_group.register(cli)
+
+    # Find all plugins and register from the entrypoint group
+    for group in metadata.entry_points(group="dvcli.plugins"):
+        # Load function from entrypoint
+        function = group.load()
+        # Execute function with the main CLI group parameter
+        function(cli)
+
+    # Invoke CLI
     cli(auto_envvar_prefix='DVCLI')
 
 

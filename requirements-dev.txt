@@ -1,3 +1,0 @@
-pip-licenses==3.5.2
-pipdeptree==2.1.0
-pyoxidizer==0.17.0
