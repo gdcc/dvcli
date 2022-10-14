@@ -59,7 +59,7 @@ def main():
     """
 
     # Find all plugins and register from the entrypoint group
-    for group in metadata.entry_points(group="dvcli.plugins"):
+    for group in metadata.entry_points()["dvcli.plugins"]:
         # Load function from entrypoint
         function = group.load()
         # Execute function with the main CLI group parameter
