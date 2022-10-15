@@ -11,11 +11,12 @@ CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 """
 
-from . import dataset, collection
+from . import upload
 
 
 # Handler to register our command group, called from main cli.
 # DO NOT REMOVE (or command group will be unusable)
 def register(cli):
-    cli.add_command(dataset.dataset)
-    cli.add_command(collection.collection)
+    # cli.add_command(dataset.dataset) - not in use for now
+    # cli.add_command(collection.collection) - not in use for now
+    cli.add_command(upload.upload)
