@@ -36,3 +36,15 @@ def verbosity_option(f: Callable) -> Callable:
     """
     return click.option('--verbose', '-v', help="Increase verbosity. Repeatable for boost.",
                         default=0, count=True, expose_value=False, callback=_set_verbosity, is_eager=True)(f)
+
+
+def api_token_option(required: bool) -> Callable:
+    """
+    Reusable API token option.
+    """
+
+    def decorate(f: Callable) -> Callable:
+        return click.option("--api-token", "-t", help="Your API token", required=required,
+                            show_envvar=True, envvar="DATAVERSE_TOKEN",
+                            prompt=required, hide_input=True)(f)
+    return decorate
