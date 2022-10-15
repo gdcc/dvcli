@@ -29,9 +29,10 @@ def _set_verbosity(ctx: click.Context, param: click.Parameter, value: Any) -> No
     logger.setLevel(verbosity.get(value, logging.DEBUG))
 
 
+# TODO: make the option accept an env var like DATAVERSE_LOG_LEVEL
 def verbosity_option(f: Callable) -> Callable:
     """
     Reusable verbosity option
     """
-    return click.option('--verbose', '-v', help="Increase verbosity. -v = WARN, -vv = INFO, -vvv = DEBUG",
+    return click.option('--verbose', '-v', help="Increase verbosity. Repeatable for boost.",
                         default=0, count=True, expose_value=False, callback=_set_verbosity, is_eager=True)(f)
